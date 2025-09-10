@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Jakub SLIDESHOW</title>
+  <style>
+    body {
+      margin: 0;
+      text-align: center;
+      background: black;
+    }
+    img {
+      width: 90%;
+      max-width: 800px;
+      margin-top: 20px;
+      border-radius: 20px;
+      animation: zoom 5s linear;
+    }
+    @keyframes zoom {
+      from { transform: scale(1); }
+      to   { transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <h1 style="color:white">Jakub SLIDESHOW</h1>
+  <img id="obraz" src="" alt="slideshow">
+
+  <script>
+   
+    let linki = [
+      "obraz1.jpg",
+      "obraz2.jpg",
+      "obraz3.jpg",
+      "obraz4.jpg",
+      "obraz5.jpg"
+    ];
+
+    let obraz = document.getElementById("obraz");
+
+    function zmien() {
+      let los = Math.floor(Math.random() * linki.length);
+      obraz.src = linki[los];
+      obraz.style.animation = "none";       
+      obraz.offsetHeight;                   
+      obraz.style.animation = "zoom 5s";   
+    }
+
+    zmien(); 
+    setInterval(zmien, 5000); 
+  </script>
+</body>
+</html>
